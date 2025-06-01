@@ -1,6 +1,6 @@
 # dependencies
 node_modules/
-
+lockedin/node_modules
 # expo
 .expo/
 dist/
@@ -33,3 +33,5 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+.idea
