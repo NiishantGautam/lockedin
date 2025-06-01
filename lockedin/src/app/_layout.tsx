@@ -10,6 +10,7 @@ export default function Layout() {
       }}
     >
       <Stack.Screen name="(tabs)" />
+      <Stack.Screen name ="onboarding" />
       <Stack.Screen name="NotFound" />
     </Stack>
   );

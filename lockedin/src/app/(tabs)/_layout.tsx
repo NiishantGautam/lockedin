@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router';
-import { theme } from "../../../theme"
+import { theme } from "@/theme";
 import TabBarIcon from '../../components/TabBarIcon';
 
 
@@ -19,7 +19,7 @@ export default function TabsLayout() {
         headerTintColor: theme.colors.black,
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => (
