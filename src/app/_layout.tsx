@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Stack, useRouter } from "expo-router";
+import React from "react";
+import { Stack, Slot } from "expo-router";
 import { useUserStore } from "@/store/useUserStore";
 import { ClerkProvider } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
@@ -22,33 +22,29 @@ const tokenCache = {
 };
 
 export default function Layout() {
-  const router = useRouter();
   const hasFinishedOnboarding = useUserStore(
     (state) => state.hasFinishedOnboarding,
   );
-
-  useEffect(() => {
-    if (hasFinishedOnboarding) {
-      router.replace("/(tabs)/home");
-    }
-  }, [hasFinishedOnboarding]);
 
   return (
     <ClerkProvider 
       publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!}
       tokenCache={tokenCache}
     >
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          animation: "fade",
-        }}
-      >
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="(auth)" />
-        <Stack.Screen name="index" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+      {hasFinishedOnboarding ? (
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            animation: "fade",
+          }}
+        >
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="(auth)" />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      ) : (
+        <Slot />
+      )}
     </ClerkProvider>
   );
 }

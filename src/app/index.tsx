@@ -12,9 +12,9 @@ export default function Onboarding() {
   const handleGetStarted = () => {
     toggleHasOnboarded();
     if (isSignedIn) {
-      router.replace("/(tabs)/home");
+      router.push("/(tabs)/home");
     } else {
-      router.replace("/(auth)/sign-in");
+      router.push("/(auth)/sign-in");
     }
   };
 
