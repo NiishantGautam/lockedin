@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native';
-import {theme} from "@/theme"
+import { View, Text, StyleSheet } from "react-native";
+import { theme } from "@/theme";
 
 export default function Settings() {
   return (
@@ -14,12 +14,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.background,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: theme.colors.black,
     marginBottom: 8,
   },

@@ -1,7 +1,6 @@
-import { Tabs } from 'expo-router';
+import { Tabs } from "expo-router";
 import { theme } from "@/theme";
-import TabBarIcon from '../../components/TabBarIcon';
-
+import TabBarIcon from "../../components/TabBarIcon";
 
 export default function TabsLayout() {
   return (
@@ -17,29 +16,26 @@ export default function TabsLayout() {
           backgroundColor: theme.colors.white,
         },
         headerTintColor: theme.colors.black,
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="home" color={color} />
-          ),
+          title: "Home",
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="person" color={color} />
-          ),
+          title: "Profile",
+          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
-          title: 'Settings',
+          title: "Settings",
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="settings" color={color} />
           ),
